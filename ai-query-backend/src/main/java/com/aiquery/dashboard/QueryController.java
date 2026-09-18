@@ -8,6 +8,7 @@ import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -39,6 +40,11 @@ public class QueryController {
   @PostMapping("/cards")
   public ResponseEntity<Document> saveCard(@Valid @RequestBody SaveCardRequest request) {
     return ResponseEntity.ok(queryService.saveCard(request.title(), request.query(), request.spec()));
+  }
+
+  @PutMapping("/cards/{id}")
+  public ResponseEntity<Document> updateCard(@PathVariable String id, @Valid @RequestBody SaveCardRequest request) {
+    return ResponseEntity.ok(queryService.updateCard(id, request.title(), request.query(), request.spec()));
   }
 
   @DeleteMapping("/cards/{id}")

@@ -56,7 +56,12 @@ The backend reads these values from the environment or defaults in application.p
 - MONGODB_DATABASE
 - AI_API_KEY
 - AI_BASE_URL
+- AI_PROVIDER (`anthropic` or `openai`)
+- AI_ENDPOINT_PATH
+- ANTHROPIC_VERSION
 - AI_MODEL
+- AI_MAX_TOKENS
+- AI_REASONING_EFFORT
 - AI_COLLECTION
 - AI_SAVED_CARDS_COLLECTION
 
